@@ -8,4 +8,4 @@
 const a = +prompt('введите колличество минут');
 
 
-console.log(Math.round(a / 60) + ' час ' + (a % 60) + ' минут');
+console.log(Math.floor(a / 60) + ' час ' + (a % 60) + ' минут');
