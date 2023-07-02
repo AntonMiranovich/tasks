@@ -4,7 +4,7 @@
 // я очень хороший текст => true
 
 
-let a = prompt('ВВедите текст').split(' ')
+let a = prompt('ВВедите текст').split(' ');
 
 console.log(a.includes('хороший') ? true : false);
 

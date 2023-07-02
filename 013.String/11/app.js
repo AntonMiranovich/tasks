@@ -4,7 +4,7 @@
 // • Найдите индекс 2 подстроки
 
 
-let str='Full stack divelover'
+let str='Full stack divelover';
 
 console.log(str.length);
 console.log(str.slice(str.indexOf('s')));

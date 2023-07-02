@@ -3,7 +3,7 @@
 // слов в ней
 
 
-let a = prompt('ВВедит строку').trim().split(' ')
+let a = prompt('ВВедит строку').trim().split(' ');
 console.log(a.length);
 
 

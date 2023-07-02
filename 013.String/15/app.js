@@ -2,7 +2,7 @@
 // строку 'я+учу+javascript+!.
 
 
-let a = ['я', 'учу', 'javascript', '!'].join()
+let a = ['я', 'учу', 'javascript', '!'].join();
 
 console.log(a.replaceAll(',', '+'));
 

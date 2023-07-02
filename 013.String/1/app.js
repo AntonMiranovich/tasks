@@ -4,7 +4,7 @@
 // ‘hschool’ => [‘h’, ‘s’, ‘c’, ‘h’, ‘o’, ‘o’, ‘l’
 
 
-let a=prompt('Введите текст')
+let a=prompt('Введите текст');
 
 if(isNaN(a)){
     console.log(a.split(''));
