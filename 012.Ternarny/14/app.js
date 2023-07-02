@@ -2,7 +2,7 @@
 // Добавить проверки для строк. Удалить лишние пробелы
 
 
-let a = prompt('ВВедите название').trim;
+let a = prompt('ВВедите название').trim();
 
 if (isNaN(a)) {
     console.log(a == 'hschool' ? 'true' : 'false');

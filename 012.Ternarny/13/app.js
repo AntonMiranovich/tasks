@@ -6,10 +6,10 @@
 
 let a = prompt('ВВедите число')
 
-let a1 = Math.round(a / 1000)
-let a2 = Math.round(a / 100 % 10)
-let a3 = Math.round(a / 10 % 10)
-let a4 = Math.round(a % 10)
+let a1 = Math.round(a / 1000);
+let a2 = Math.round(a / 100 % 10);
+let a3 = Math.round(a / 10 % 10);
+let a4 = Math.round(a % 10);
 
 
 if (isNaN(a)) {
