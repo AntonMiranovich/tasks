@@ -6,7 +6,7 @@
 
 let a = prompt('ВВедите текст').split(' ');
 
-console.log(a.includes('хороший') ? true : false);
+console.log(a.includes('хорош') ? true : false);
 
 
 
