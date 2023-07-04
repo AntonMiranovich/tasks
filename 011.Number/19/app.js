@@ -5,7 +5,7 @@ let b = +prompt(`введите значение b`);
 
 let c = prompt("введите значение c");
 
-let x = (b ** 2 - 4 * a * c)
+let D = (b ** 2 - 4 * a * c)
 
 if (b > a) {
     const x1 = (-b + Math.sqrt(D) / (2 * a))
@@ -20,3 +20,4 @@ if (b > a) {
 } else if (D < 0) {
     console.log('НЕТ КОРНЕЙ');
 }
+
