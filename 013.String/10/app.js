@@ -2,7 +2,7 @@
 // элемент к нижнему регистру. Повторить строку 3 раза. Добавить проверку на ввод
 // только текстовых значений
 
-let a = prompt('ВВедите текст').trim().toLowerCase();
+let a = prompt().trim().toLowerCase();
 
 console.log(isNaN(a) ? a.repeat(3) : 'Error');
 

@@ -6,6 +6,6 @@
 let a = prompt();
 let b = 1;
 for (let i = 1; i <= a; i++) {
-    b *= i
+    b *= a[i]
 }
 console.log(b);

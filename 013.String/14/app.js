@@ -2,9 +2,9 @@
 // заканчивается подстрокой .com или .ru, то вывести true, в противном случае false
 
 
-let url = prompt('ВВедите адрес');
+let url = "//codechick.io/tutorials/javascript/js-for-loop.com";
 
-if (url[0].includes('http') && url.includes('/') && url.includes('.ru') || url.includes('.com')) {
+if (url.includes('http') && url.includes('/') && (url.includes('.com') || url.includes('.ru'))) {
     console.log(true);
 } else {
     console.log(false);
