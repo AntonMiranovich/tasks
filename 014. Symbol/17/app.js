@@ -4,3 +4,8 @@
 // anna_test_test -> annaTestTest
 
 
+let a='anna_test_test'.split('_');
+console.log(a[0]+a[1][0].toUpperCase()+a[1].slice(1)+a[2][0].toUpperCase()+a[2].slice(1));
+
+
+

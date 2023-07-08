@@ -3,10 +3,18 @@
 // и наоборот.
 // Swap Case => sWAP cASE
 
-let a='Swap Case';
+let a = 'Swap Case'.split('');
+let b=''
 
-for(let i=0;i<a.length;i++){
-    if(a[i]==a[i].toLowerCase){
-        a
+
+
+for (let i = 0; i < a.length; i++) {
+    if (a[i] == a[i].toLowerCase()) {
+        b+=a[i].toUpperCase()
+    }else{
+        b+=a[i].toLowerCase()
     }
 }
+
+console.log(b);
+
