@@ -3,6 +3,6 @@
 
 let a = 9;
 
-for (let i = 1; i <= 9; i++) {
+for (let i = 1; i <= a; i++) {
     i % 3 === 0 ? console.log(i) : null;
 };

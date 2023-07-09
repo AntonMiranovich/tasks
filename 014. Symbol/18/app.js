@@ -4,7 +4,7 @@
 // Swap Case => sWAP cASE
 
 let a = 'Swap Case'.split('');
-let b=''
+let b='';
 
 
 
