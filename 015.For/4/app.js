@@ -9,11 +9,11 @@ let sum = 0;
 let count = 0;
 
 for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === a) {
-        break;
-    } else {
-        sum += arr[i];
-        count++;
-    }
+  if (arr[i] === a) {
+    break;
+  } else {
+    sum += arr[i];
+    count++;
+  }
 }
 console.log(sum / count);
