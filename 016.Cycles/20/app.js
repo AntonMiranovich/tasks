@@ -12,8 +12,6 @@ for (let i = 0; i < num.length; i++) {
     continue;
   }
 
-//   let last_el = result[result.length - 1];
-
   if (num[i] % 2 !== 0 && num[i-1] % 2 !== 0) {
     result.push(":", num[i]);
     continue;

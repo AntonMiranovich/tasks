@@ -4,12 +4,12 @@
 
 
 //вариант 1
-// const a = +prompt();
+// const a = 10;
 // let arr = '0, 1';
 // let prev = 0;
 // let now = 1;
 
-// for (let i = 3; i <= a; i++) {
+// for (let i = 2; i < a; i++) {
 //   let sum = prev + now;
 //   prev = now;
 //   now = sum;
@@ -20,12 +20,12 @@
 
 //вариант 2
 
-const a = +prompt();
-let arr = '0, 1';
-let prev = 0;
-let now = 1;
+const a = 10;
+let arr = [0, 1];
 
-for (let i = 3; i <= a; i++) {
-  
+for (let i = 2; i < a; i++) {
+    let sum =arr[i-1]+arr[i-2]
+    arr.push(sum)
 }
+console.log(arr);
 
