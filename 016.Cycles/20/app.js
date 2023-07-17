@@ -12,11 +12,11 @@ for (let i = 0; i < num.length; i++) {
     continue;
   }
 
-  if (num[i] % 2 !== 0 && num[i-1] % 2 !== 0) {
+  if (num[i] % 2 !== 0 && num[i - 1] % 2 !== 0) {
     result.push(":", num[i]);
     continue;
   }
-  result.push(num[i])
+  result.push(num[i]);
 }
 
 console.log(result.join(''));
