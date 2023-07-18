@@ -10,11 +10,10 @@ let sum = [];
 // }
 // console.log(sum);
 
-
-for(let el of arr){
-    if (el % 3 === 0) {
-        sum.push(el);
-      }
+for (let el of arr) {
+  if (el % 3 === 0) {
+    sum.push(el);
+  }
 }
 
 console.log(sum);
