@@ -2,3 +2,13 @@
 // массива с клавиатуры. Значения могут быть строкового либо числового типа
 // данных. Необходимо из этих элементов составить 2 массива: со строками и второй
 // массив, соответственно, с числами. forEach
+
+const n = prompt("количество элементов массива");
+let arrStr = [];
+let arrNum = [];
+for (let i = 0; i < n; i++) {
+  let value = prompt("заполнение массива");
+  isNaN(value) ? arrStr.push(value) : arrNum.push(value);
+}
+console.log(arrStr);
+console.log(arrNum);
