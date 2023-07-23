@@ -15,7 +15,7 @@ const n = 4
 // +prompt('введиче число');
 
 
-//Вариант 1
+ //Вариант 1
 // if (!isNaN(n) && n <= arr.length && n !== 0 && n !== "") {
 //   let arrResult = [];
 //   let count = 1;
