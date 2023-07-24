@@ -10,7 +10,7 @@
 // 3 : 1
 // }
 
-const n = +prompt("Ведите значение n");
+const n = prompt('Ведите n');
 let arr = [];
 let obj = {};
 
@@ -20,7 +20,7 @@ for (let i = 0; i < n; i++) {
 }
 
 for (let i = 0; i < n; i++) {
-  obj[`${i}`] = arr[i];
+  obj[i] = arr[i];
 }
 
 console.log(obj);

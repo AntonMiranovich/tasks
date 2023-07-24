@@ -33,7 +33,7 @@ arr.forEach(function (el) {
 });
 
 for (let i = 0; i < arr2.length; i++) {
-  newObj[`${i}`] = arr2[i];
+  newObj[i] = arr2[i];
 }
 
 console.log(newObj);
