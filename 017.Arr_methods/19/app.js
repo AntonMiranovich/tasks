@@ -21,5 +21,3 @@ if(arr[i]===0){
 }
 
 console.log(sum);
-
-

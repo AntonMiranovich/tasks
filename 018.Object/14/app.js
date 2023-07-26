@@ -22,7 +22,6 @@ const obj = {
 
 let newObj = {};
 const arr = [];
-
 for (let key in obj) {
   arr.push(obj[key]);
 }
