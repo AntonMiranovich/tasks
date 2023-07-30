@@ -1,2 +1,11 @@
 // 16. *Вычислите сумму массива чисел статичного массива 
 //используя рекурсию
+
+const arr=[1,2,3,4,5,6]
+
+function sumArr(){
+
+}
+
+const result=sumArr(arr)
+console.log(result);
