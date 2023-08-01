@@ -7,13 +7,10 @@ const obj = {
   age: 30,
 };
 
-
 (function doValue(a) {
   let newObj = {};
-  for(let key in a){
-    !isNaN(a[key])?newObj[key]=a[key]:null
+  for (let key in a) {
+    !isNaN(a[key]) ? (newObj[key] = a[key]) : null;
   }
   console.log(newObj);
-}(obj))
-
-
+})(obj);
