@@ -21,7 +21,7 @@ for (let key in obj) {
     console.log("Ошибка");
     break;
   } else {
-    bd.id = obj.label;
+    bd.id = obj.label.toLowerCase();
     bd[key]=obj[key]
   }
 }
