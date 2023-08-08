@@ -35,3 +35,5 @@ function doPassword(str) {
 }
 
 console.log(doPassword(str));
+
+ 
