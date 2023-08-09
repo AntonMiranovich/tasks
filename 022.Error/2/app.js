@@ -2,7 +2,7 @@
 // Если в массиве есть хотя
 // бы 1 строка, бросить исключение.
 
-const arr = [1, 2, "hello", 4];
+const arr = [1, 2, 4];
 
 function doArray(arr) {
   try {
