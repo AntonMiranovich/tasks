@@ -8,3 +8,18 @@
 // • Числа
 // • Специальные символы
 // • Длина не менее 8 символов
+
+const password = "AntoN92@antonantoN";
+
+function checkPass(pass) {
+  try {
+    if (!/(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{8,}/gm.test(pass))
+      throw new Error("введен некоректный пороль");
+    return true;
+  } catch (error) {
+    return error.message;
+  }
+}
+
+const result = checkPass(password);
+console.log(result);
