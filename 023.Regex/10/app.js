@@ -11,15 +11,15 @@ const strHtml = `    <header>
         <a href="../pages/index.html">Work</a>
     </p>
     <p>
-    <!--this is parragraf1-->
+      <!--this is parragraf1-->
         <a href="../pages/abaut.html">About</a>
     </p>
     <p>
-    <!--this is parragraf2-->
+      <!--this is parragraf2-->
         <a href="https://github.com/AntonMiranovich">Playground</a>
     </p>
     <p>
-    <!--this is parragraf3-->
+      <!--this is parragraf3-->
         <a href="../pages/contact.html">Contact</a>
     </p>
 </nav>
@@ -28,7 +28,7 @@ const strHtml = `    <header>
 
 function strReplace(str) {
   try {
-    let newStrHtml = str.replaceAll(/^<!--[\w.\s]+-->$/gm, '');
+    let newStrHtml = str.replaceAll(/^( +|)<!--[\w.\s]+-->$/gm, "");
     return newStrHtml;
   } catch (error) {
     return error;

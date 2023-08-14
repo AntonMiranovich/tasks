@@ -7,22 +7,20 @@
 // "12345“ -> false
 // "a234“ -> false
 
-const pin1 = "2436";
-const pin2 = "243691";
+const pin = "243116";
 
-function checkPin(pin1, pin2) {
+
+function checkPin(pin) {
   try {
-    if (isNaN(pin1) || isNaN(pin2))
+    if (isNaN(pin))
       throw new Error(`В веденном пин коде присутствуют не только цифры`);
-    if (!/^[0-9]{4}$/gm.test(pin1) && !/^[0-9]{6}$/gm.test(pin1))
-      throw new Error("Пин1 введен неверно");
-    if (!/^[0-9]{4}$/gm.test(pin2) && !/^[0-9]{6}$/gm.test(pin2))
-      throw new Error("Пин2 введен неверно");
+    if (!/^[0-9]{4}$/gm.test(pin) && !/^[0-9]{6}$/gm.test(pin))
+      throw new Error("Пин введен неверно");
     return true;
   } catch (error) {
     return error.message;
   }
 }
 
-const resultCheck = checkPin(pin1, pin2);
+const resultCheck = checkPin(pin);
 console.log(resultCheck);

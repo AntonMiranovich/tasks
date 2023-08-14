@@ -4,7 +4,7 @@
 // ["O","Q","R","S"] -> "P"
 // (Вариант если пропавших букв больше чем одна)
 
-const arr = ["O", "Q", "R", "S"].join("").toLowerCase();
+const arr = ['"O", "Q", "R", "S"'].join("").toLowerCase();
 
 function checkAlp(arr) {
   try {
