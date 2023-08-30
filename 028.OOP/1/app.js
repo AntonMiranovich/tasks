@@ -4,3 +4,16 @@
 //  который будет выводить
 // “{name} {surname), с наилучшими пожеланиями”.
 
+class Singer {
+  constructor(name, surname) {
+    this.name = name;
+    this.surname = surname;
+  }
+
+  getAutograph() {
+    return `${this.name} ${this.surname} с наилучшими пожеланиями`;
+  }
+}
+
+const singer = new Singer("Anton", "Miranovich");
+console.log(singer.getAutograph());
