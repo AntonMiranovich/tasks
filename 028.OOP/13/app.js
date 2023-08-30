@@ -19,72 +19,47 @@
 // Если совпадение есть – ошибка. Добавить проверки
 
 class ServerPost {
-  middleware(obj_) {
-    let oldObj = this.service();
-    let filterObj = oldObj.filter(function (el) {
-      el.label == obj_.label ? true : null;
-    });
-    if (filterObj.length > 0)
-      throw new Error("В базе данных уже существует такое значение LABEL");
-  }
-
   controller(obj) {
-    try {
-      middleware();
-      const servic = this.service();
-      const newObj = obj;
-      servic.push({ id: newObj.label.toLowerCase(), ...newObj });
-      return servic;
-    } catch (error) {
-      return error.message;
+    try{
+    const serv = this.service(obj);
+    return serv;
+    }catch(error){
+        return error.message
     }
   }
 
-  service() {
-    const reposit = this.repository();
-    return reposit;
+  service(obj) {
+    const repos = this.repository(obj);
+    return repos;
   }
 
-  repository() {
+  repository(obj) {
     const arr = [
-      {
-        id: "javascript",
-        label: "JavaScript",
-        category: "programmingLanguages",
-        priority: 1,
-      },
-      {
-        id: "typescript",
-        label: "TypeScript",
-        category: "programmingLanguages",
-        priority: 1,
-      },
-      {
-        id: "sql",
-        label: "SQL",
-        category: "programmingLanguages",
-        priority: 2,
-      },
-      {
-        id: "java",
-        label: "Java",
-        category: "programmingLanguages",
-        priority: 3,
-      },
+      {id: "javascript",label: "JavaScript+Piton",category: "programmingLanguages",priority: 1,},
+      {id: "typescript",label: "TypeScript",category: "programmingLanguages",priority: 1,},
+      {id: "sql",label: "SQL",category: "programmingLanguages",priority: 2,},
+      {id: "java",label: "Java",category: "programmingLanguages",priority: 3,},
       { id: "go", label: "GO", category: "programmingLanguages", priority: 3 },
     ];
 
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].label == obj.label)  throw new Error("В базе данных уже существует такое значение LABEL");
+    }
+
+    arr.push({ id: obj.label.toLowerCase(), ...obj });
     return arr;
   }
 }
 
-const obj = {
+
+
+
+const userObj = {
   label: "JavaScript",
   category: "programmingLanguages",
   priority: 1,
 };
 
 const serverPost = new ServerPost();
-serverPost.middleware(obj)
-
-console.log(serverPost.controller(obj));
+console.log(serverPost.controller(userObj));
