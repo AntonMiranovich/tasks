@@ -15,3 +15,64 @@
 // Необходимо найти id клиента в массиве БД. Если совпадение есть, произвести
 // обновление значений для соответствующих ключей.
 // Если совпадения по id нет – ошибка. Добавить проверки
+
+class ServerPut {
+  controller(obj) {
+    try {
+      const serv = this.service(obj);
+      return serv;
+    } catch (error) {
+      return error.message;
+    }
+  }
+
+  service(obj) {
+    const rep = this.repository(obj);
+    return rep;
+  }
+
+  repository(obj) {
+    const arr = [
+      {
+        id: "javascript",
+        label: "JavaScript",
+        category: "programmingLanguages",
+        priority: 1,
+      },
+      {
+        id: "typescript",
+        label: "TypeScript",
+        category: "programmingLanguages",
+        priority: 1,
+      },
+      {
+        id: "sql",
+        label: "SQL",
+        category: "programmingLanguages",
+        priority: 2,
+      },
+      {
+        id: "java",
+        label: "Java",
+        category: "programmingLanguages",
+        priority: 3,
+      },
+      { id: "go", label: "GO", category: "programmingLanguages", priority: 3 },
+    ];
+
+    const newArr = arr.filter((el) => el.id !== obj.id);
+    if (newArr.length === arr.length) {
+      throw new Error("ошибка");
+    } else {
+      newArr.push(obj);
+    }
+    return newArr;
+  }
+}
+
+const serverPut = new ServerPut();
+const obj = JSON.parse(`{"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 10}`);
+
+console.log(serverPut.controller(obj));
+
+
