@@ -15,13 +15,7 @@ class DelitElArr {
   delEl() {
     const div = document.querySelector("div");
     div.addEventListener("click", function (event) {
-      const newArr = [];
-      const values = div.textContent.split(",");
-      
-      for (let i = 0; i < 15; i++) {
-        if (values[i] !== evTar) newArr.push(values[i]);
-      }
-     console.log(evTar);
+      event.target.remove();
     });
   }
 }
