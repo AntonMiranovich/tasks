@@ -17,3 +17,39 @@
 // возможным уникальным id БД, таким образом, чтобы в БД был запушен объект вида
 // {"id": 6, "name": "Test", "age": 1}
 // Если совпадение есть – ошибка. Добавить проверки
+
+class ServerPost {
+  controller(obj) {
+    try {
+      this.middleware(obj);
+    } catch (er) {
+      return er.message;
+    }
+  }
+
+  middleware(obj) {
+    this.repository(obj);
+  }
+
+  repository(obj) {
+    const arr = [
+      { id: 1, email: "yesenia@mail.ru", pwd: "pwdffff" },
+      { id: 2, email: "hanna@mail.ru", pwd: "pwdfevcrdv" },
+      { id: 3, email: "stanislau@mail.ru", pwd: "pwdtest" },
+      { id: 4, email: "german@mail.ru", pwd: "pwdqqq" },
+      { id: 5, email: "maria@mail.ru", pwd: "pwdfcel" },
+    ];
+
+    const newArr = arr.filter((el) => el.email == obj.email);
+    if (!newArr.length) {
+        arr.push({id:(arr.length+1),...obj})
+    } else {
+        throw new Error ('Error')
+    }
+    console.log(arr);
+  }
+}
+
+const sercerPost = new ServerPost();
+const obj = { email: "Test", pwd: 1 };
+sercerPost.controller(obj);
