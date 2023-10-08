@@ -3,9 +3,9 @@
 // ‘111111111111’ -> 12
 
 let a = '123';
-let result = 0;
+let sum = 0;
 for (let i = 0; i < a.length; i++) {
-    result += +a[i];
+    sum += +a[i];
 }
 
-console.log(result);
+console.log(sum);
