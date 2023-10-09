@@ -9,3 +9,27 @@
 // repository – функция, симулирующая БД. Хранит массив данных. Взаимодействие с
 // этим массивом осуществляется только в repository. Массив находится в
 // приложении
+
+class Server {
+  controller(obj) {
+    this.service(obj);
+  }
+
+  service(obj) {
+    this.repository(obj);
+  }
+
+  repository(obj) {
+    const database = [];
+    database.push(obj);
+    console.log(database);
+  }
+}
+
+const server = new Server();
+const getLog = {
+    email: "antonmir992@gmail.com",
+    password: "2436910",
+};
+
+server.controller(getLog);
