@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+}
+
+body {
+  width: 1200px;
+  background-color: #343434;
+}
+
+.wrapper {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.artist,
+.nameOfSong {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  color: #ffff;
+}
+
+.player {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  margin: 20% auto;
+  align-items: center;
+  margin: auto;
+}
+
+.songCover{
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.back {
+  background-image: url(./assets/prevBtn.svg);
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.play {
+  background-image: url(./assets/playBtn.png);
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.next {
+  background-image: url(./assets/nextBtn.svg);
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
