@@ -1,4 +1,6 @@
-//10. Добавить переключение песен
+//10. Добавить переключение песен в плеере
+
+
 
 const btnBack = document.querySelector(".back");
 const btnPlay = document.querySelector(".play");

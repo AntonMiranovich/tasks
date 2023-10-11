@@ -1,20 +1,18 @@
-// Посчитать количество гласных и согласных в строке
+const btn = document.querySelector("button");
 
-const btn = document.querySelector('button');
+btn.addEventListener("click", () => {
+  const inp = document.querySelector("input").value;
+  const glas = document.querySelector(".glas");
+  const soglas = document.querySelector(".soglas");
 
-btn.addEventListener('click', () => {
-    const inp = document.querySelector('input').value;
-    const glas = document.querySelector('.glas');
-    const soglas = document.querySelector('.soglas');
-
-    const strGlas = 'aiueoy';
-    let countGlas = 0;
-    for (let i = 0; i < inp.length; i++) {
-        if (strGlas.includes(inp[i])) {
-            countGlas += 1;
-        }
+  const strGlass = "aiuyeo";
+  let countGlas = 0;
+  for (let i = 0; i < inp.length; i++) {
+    if (strGlass.includes(inp[i])) {
+      countGlas += 1;
     }
-    const countSoglas = inp.length - countGlas;
-    glas.innerHTML = `количество гласный: ${countGlas}`;
-    soglas.innerHTML = `количество согласный: ${countSoglas}`;
-})
+  }
+  const countSoglas = inp.length - countGlas;
+  glas.innerHTML = countGlas;
+  soglas.innerHTML = countSoglas;
+});
