@@ -31,6 +31,7 @@ const {
   getDataById,
   createData,
   updateData,
+  deleteData,
 } = require("./service");
 const bodyParser = require("body-parser");
 
@@ -61,11 +62,11 @@ app.put("/:id", (req, res) => {
   res.send(data);
 });
 
-app.delete('/:id',(req,res)=>{
-    const { id } = req.params;
-    const data = deleteData(id);
-    res.send(data);
-})
+app.delete("/:id", (req, res) => {
+  const { id } = req.params;
+  const data = deleteData(id);
+  res.send(data);
+});
 
 app.listen(3000, () => {
   console.log("3000 порт запущен");

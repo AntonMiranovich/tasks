@@ -38,8 +38,15 @@ function updateData(id, name, age) {
   return filtered;
 }
 
-function deleteData(id){
-
+function deleteData(id) {
+  const newArr = arr.filter((el) => el.id != id);
+  return newArr;
 }
 
-module.exports = { getAllData, getDataById, createData,updateData };
+module.exports = {
+  getAllData,
+  getDataById,
+  createData,
+  updateData,
+  deleteData,
+};
