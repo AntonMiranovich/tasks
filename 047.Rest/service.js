@@ -49,11 +49,32 @@ const arr = [
   },
 ];
 
-function getData(){
-  if(arr.length==0)throw new Error('ваш массив пуст')
-  return arr
+function getData() {
+  if (arr.length == 0) throw new Error("ваш массив пуст");
+  return arr;
 }
 
+function getDataById(id) {
+  if (arr.length == 0) throw new Error("ваш массив пуст");
+  const newObj = arr.filter((el) => el.id == id);
+  return newObj;
+}
+
+function postData(label, category, priority) {
+  const filtered = arr.filter((el) => el.id != newObj.id);
+  if (filtered.length != arr.length)
+    throw new Error("в массиву уже есть такой id");
+  
+  const newObj = {
+    id: label.toLowerCase(),
+    label: label,
+    category: category,
+    priority: priority,
+  };
 
 
-module.exports={getData}
+  arr.push(newObj);
+  return arr;
+}
+
+module.exports = { getData, getDataById, postData };
