@@ -1,62 +1,33 @@
+// • GET “/” – получние всех элементов массива
+// • GET “/:id” – получение отдельного элемента по id
+// • POST “/” – с клиента приходит объект вида {"label": "TypeScript", "category":
+// "programmingLanguages", "priority": 1 }. Добавить в массив объект в том случае, если
+// совпадений label.toLowerCase() с id массива нет. Вернуть клиенту массив и статус
+// • PUT “/:id” – обновить в массиве объект только в том случае, если есть совпадения с
+// id. Вернуть клиенту массив и статус
+// • DELETE “/:id” удалить из массива объект только в том случае, если id совпадает.
+// Вернуть клиенту массив и статус
+
 const express = require("express");
 const bodyParser = require("body-parser");
-const {
-  getAllEnvironment,
-  getEnvironmentById,
-  createEnvironment,
-  updateEnvironment,
-  deleteEnvironment,
-} = require("./service");
+
+const { getData } = require("./service");
 
 const app = express();
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  const data = getAllEnvironment();
-  res.status(200).send(data);
-});
-
-app.get("/:id", (req, res) => {
   try {
-    const { id } = req.params;
-    const data = getEnvironmentById(id);
-    res.status(200).send(data);
+    res.send(getData);
   } catch (error) {
-    res.status(404).send(error.message);
+    res.send(error.message);
   }
 });
 
-app.post("/", (req, res) => {
-  try {
-    const { label, category, priority } = req.body;
-    const data = createEnvironment(label, category, priority);
-    res.status(201).send(data);
-  } catch (error) {
-    res.status(405).send(error.message);
-  }
-});
 
-app.put("/:id", (req, res) => {
-  try {
-    const { id } = req.params;
-    const { label, category, priority } = req.body;
-    const data = updateEnvironment(id, label, category, priority);
-    res.status(200).send(data);
-  } catch (error) {
-    res.status(404).send(error.message);
-  }
-});
 
-app.delete("/:id", (req, res) => {
-  try {
-    const { id } = req.params;
-    const data = deleteEnvironment(id);
-    res.status(200).send(data);
-  } catch (error) {
-    res.status(404).send(error.message);
-  }
-});
 
-app.listen(3000, () => {
-  console.log("server running on port 3000");
-});
+
+app.listen(3000,()=>{
+  console.log('сервер работает на 3000 порте');
+})

@@ -49,56 +49,11 @@ const arr = [
   },
 ];
 
-function getAllEnvironment() {
-  return arr;
+function getData(){
+  if(arr.length==0)throw new Error('ваш массив пуст')
+  return arr
 }
 
-function getEnvironmentById(id) {
-  const filtered = arr.filter((el) => el.id == id);
-  if (filtered.length == 0) throw new Error("эл не найден");
-  return filtered;
-}
 
-function createEnvironment(label, category, priority) {
-  const filtered = arr.filter((el) => el.label == label);
-  if (filtered.length != 0) throw new Error("эллемент с таким label уже сужествует");
 
-  const newObj = {
-    id: label.toLowerCase(),
-    label: label,
-    category: category,
-    priority: priority,
-  };
-
-  arr.push(newObj);
-  return arr;
-}
-
-function updateEnvironment(id, label, category, priority) {
-  const filtered = arr.filter((el) => el.id != id);
-
-  if (filtered.length == arr.length) throw new Error("id not defaund");
-  const newObj = {
-    id: id,
-    label: label,
-    category: category,
-    priority: priority,
-  };
-
-  filtered.push(newObj);
-  return filtered;
-}
-
-function deleteEnvironment(id) {
-  const filtered = arr.filter((el) => el.id != id);
-  if (filtered.length == arr.length) throw new Error("id not defaund");
-  return filtered;
-}
-
-module.exports = {
-  getAllEnvironment,
-  getEnvironmentById,
-  createEnvironment,
-  updateEnvironment,
-  deleteEnvironment,
-};
+module.exports={getData}
