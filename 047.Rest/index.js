@@ -11,7 +11,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const { getData, getDataById, postData } = require("./service");
+const { getData, getDataById, postData, putData } = require("./service");
 
 const app = express();
 app.use(bodyParser.json());
@@ -38,12 +38,24 @@ app.get("/:id", (req, res) => {
 app.post("/", (req, res) => {
   try {
     const { label, category, priority } = req.body;
-    const data=postData(label, category, priority)
-    res.send(data)
+    const data = postData(label, category, priority);
+    res.send(data);
   } catch (error) {
     res.send(error.message);
   }
 });
+
+app.put("/:id", (req, res) => {
+  try {
+    const { id } = req.params;
+    const { label, category, priority } = req.body;
+    const data = putData(id, label, category, priority);
+    res.send(data);
+  } catch (error) {
+    res.send(error.message);
+  }
+});
+
 
 app.listen(3000, () => {
   console.log("сервер работает на 3000 порте");

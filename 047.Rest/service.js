@@ -61,20 +61,31 @@ function getDataById(id) {
 }
 
 function postData(label, category, priority) {
-  const filtered = arr.filter((el) => el.id != newObj.id);
-  if (filtered.length != arr.length)
-    throw new Error("в массиву уже есть такой id");
-  
   const newObj = {
     id: label.toLowerCase(),
     label: label,
     category: category,
     priority: priority,
   };
-
+  const filtered = arr.filter((el) => el.id != newObj.id);
+  if (filtered.length != arr.length)
+    throw new Error("в массиве уже есть такой id");
 
   arr.push(newObj);
   return arr;
 }
 
-module.exports = { getData, getDataById, postData };
+function putData(id, label, category, priority) {
+  const newObj = {
+    id: id,
+    label: label,
+    category: category,
+    priority: priority,
+  };
+  const filtered = arr.filter((el) => el.id != newObj.id);
+  if (filtered.length == arr.length) throw new Error("в массиве нет такого id");
+  filtered.push(newObj);
+  return filtered;
+}
+
+module.exports = { getData, getDataById, postData, putData };
