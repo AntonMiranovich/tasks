@@ -11,7 +11,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const { getData, getDataById, postData, putData } = require("./service");
+const {
+  getData,
+  getDataById,
+  postData,
+  putData,
+  deleteData,
+} = require("./service");
 
 const app = express();
 app.use(bodyParser.json());
@@ -56,6 +62,15 @@ app.put("/:id", (req, res) => {
   }
 });
 
+app.delete("/:id", (req, res) => {
+  try {
+    const { id } = req.params;
+    const data = deleteData(id);
+    res.send(data);
+  } catch (error) {
+    res.send(error.message);
+  }
+});
 
 app.listen(3000, () => {
   console.log("сервер работает на 3000 порте");

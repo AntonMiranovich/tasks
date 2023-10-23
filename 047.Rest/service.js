@@ -88,4 +88,11 @@ function putData(id, label, category, priority) {
   return filtered;
 }
 
-module.exports = { getData, getDataById, postData, putData };
+function deleteData(id) {
+  const filtered = arr.filter((el) => el.id != id);
+  if (filtered.length == arr.length)
+    throw new Error("в массиве не найдено такого id");
+  return filtered;
+}
+
+module.exports = { getData, getDataById, postData, putData,deleteData };
