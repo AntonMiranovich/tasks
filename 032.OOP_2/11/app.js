@@ -14,3 +14,4 @@ class WordString {
 const str = "Anton";
 const wordString = new WordString(str);
 console.log(wordString.ReverseString());
+

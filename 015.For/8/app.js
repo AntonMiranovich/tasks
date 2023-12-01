@@ -1,16 +1,16 @@
 // Преобразуйте первую букву каждого слова строки в верхний регистр.
 
+const str = "i am developer".split(" ");
 
-let a = 'i am developer'.split(' ');
+//Вариант 1
+let result = "";
 
-let a1 = '';
-
-for (let i = 0; i < a.length; i++) {
-    a1 += a[i][0].toUpperCase()+a[i].slice(1)+' ';
+for (let i = 0; i < str.length; i++) {
+  result += `${str[i][0].toUpperCase()}${str[i].slice(1)} `;
 }
+console.log(result);
 
-console.log(a1);
+//Вариант 2
+const str2 = str.map((el) => `${el[0].toUpperCase()}${el.slice(1)} `);
 
-
-
-
+console.log(str2.join(""));
