@@ -7,23 +7,44 @@
 
 class NumberArray {
   sumArr() {
-    const arr = [];
+    const array = [];
     for (let i = 0; i < 5; i++) {
-      arr.push(Math.floor(Math.random() * 10));
+      array.push(Math.floor(Math.random() * 10));
     }
-    return arr;
+    return array;
   }
 }
 
 class ConsoleArray extends NumberArray {
+
   sumArr() {
-    const arr = super.sumArr();
-    let count = arr.reduce((sum, el) => {
-      return sum + el;
-    }, 0);
-    console.log(arr, count);
+    let count = super.sumArr().reduce((sum, el) => sum + el, 0);
+    console.log(super.sumArr(), count);
   }
 }
 
 const consoleArray = new ConsoleArray();
-consoleArray.sumArr();
+consoleArray.sumArr()
+
+// class NumberArray {
+//   sumArr() {
+//     const arr = [];
+//     for (let i = 0; i < 5; i++) {
+//       arr.push(Math.floor(Math.random() * 10));
+//     }
+//     return arr;
+//   }
+// }
+
+// class ConsoleArray extends NumberArray {
+//   sumArr() {
+//     const arr = super.sumArr();
+//     let count = arr.reduce((sum, el) => {
+//       return sum + el;
+//     }, 0);
+//     console.log(arr, count);
+//   }
+// }
+
+// const consoleArray = new ConsoleArray();
+// consoleArray.sumArr();
