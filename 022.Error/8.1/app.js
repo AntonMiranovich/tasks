@@ -13,18 +13,16 @@ function checkAlp(array) {
     }
 
     const alpha = "abcdefghijklmnopqrstuvwxyz";
-    const firstLetter = array[0];
-    const lastLetter = array[array.length - 1];
     const partAlpha = alpha.slice(
-      alpha.indexOf(firstLetter),
-      alpha.lastIndexOf(lastLetter)
+      alpha.indexOf(array[0]),
+      alpha.lastIndexOf(array[array.length - 1])
     );
     let result = "";
     let arr = array;
     for (let i = 0; i < partAlpha.length; i++) {
       if (partAlpha[i] !== arr[i]) {
         result += partAlpha[i] + " ";
-        arr = arr.slice(arr[0], arr[i]) + "1" + arr.slice(arr[i]);
+        arr = arr.slice(0, i) + "1" + arr.slice(i);
       }
     }
     return result;
