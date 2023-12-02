@@ -4,34 +4,33 @@
 // ["O","Q","R","S"] -> "P"
 // (Вариант если пропавших букв больше чем одна)
 
-const arr = ['"O", "Q", "R", "S"'].join("").toLowerCase();
+const array = ["O", "R", "S", "v"].join("").toLowerCase();
 
-function checkAlp(arr) {
+function checkAlp(array) {
   try {
-    for (let i = 0; i < arr.length; i++) {
-      if (!isNaN(arr[i])) throw new Error("В массиве присутствуют числа");
+    for (let i = 0; i < array.length; i++) {
+      if (!isNaN(array[i])) throw new Error("В массиве присутствуют числа");
     }
 
-    const alp = "abcdefghijklmnopqrstuvwxyz";
-    const firstLetter = arr[0];
-    const lastLetter = arr[arr.length - 1];
-    const partAlp = alp.slice(
-      alp.indexOf(firstLetter),
-      alp.lastIndexOf(lastLetter)
+    const alpha = "abcdefghijklmnopqrstuvwxyz";
+    const firstLetter = array[0];
+    const lastLetter = array[array.length - 1];
+    const partAlpha = alpha.slice(
+      alpha.indexOf(firstLetter),
+      alpha.lastIndexOf(lastLetter)
     );
-    let res = "";
-    let arr2 = arr;
-    for (let i = 0; i < partAlp.length; i++) {
-      if (partAlp[i] !== arr2[i]) {
-        res += partAlp[i] + " ";
-        arr2 = arr2.slice(arr2[0], arr2[i]) + "1" + arr2.slice(arr2[i]);
+    let result = "";
+    let arr = array;
+    for (let i = 0; i < partAlpha.length; i++) {
+      if (partAlpha[i] !== arr[i]) {
+        result += partAlpha[i] + " ";
+        arr = arr.slice(arr[0], arr[i]) + "1" + arr.slice(arr[i]);
       }
     }
-    return res;
+    return result;
   } catch (error) {
     return error.message;
   }
 }
 
-let result = checkAlp(arr);
-console.log(result);
+console.log(`отсутствующую в массиве -- ${checkAlp(array)}`);
