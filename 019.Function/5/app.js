@@ -2,12 +2,20 @@
 // только числа. Функция возвращает true, если в массиве только числа и false в
 // противном случае
 
-const arr = [1, 3, "Anton", 7, 3, "Hello"];
+// const arr = [1, 3, "Anton", 7, 3, "Hello"];
 
-function isTrue(a) {
-  let result2 = a.every((el) => (!isNaN(el) ? true : false));
-  return result2;
+// function isTrue(a) {
+//   let result2 = a.every((el) => (!isNaN(el) ? true : false));
+//   return result2;
+// }
+
+// let result = isTrue(arr);
+// console.log(result);
+
+const array = [1, 3, "Anton", 7, 3, "Hello"];
+
+function isTrue(arr) {
+  return arr.every((el) => (!isNaN(el) ? true : false));
 }
 
-let result = isTrue(arr);
-console.log(result);
+console.log(isTrue(array));
