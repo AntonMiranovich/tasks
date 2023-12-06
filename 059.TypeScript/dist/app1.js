@@ -17,7 +17,7 @@ else {
 !isNaN(num)
     ? num % 2 == 0
         ? console.log("четное")
-        : console.log("не четное")
-    : console.log("вы ввели не число");
+        : console.log("нечетное")
+    : console.log("вы ввели нечисло");
 //3
-console.log(!isNaN(num) ? (num % 2 == 0 ? "четное" : "не четное") : "вы ввели не число");
+console.log(!isNaN(num) ? (num % 2 == 0 ? "четное" : "нечетное") : "вы ввели не число");
