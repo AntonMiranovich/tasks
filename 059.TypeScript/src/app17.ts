@@ -3,7 +3,7 @@
 
 const arrayNum: number[] = [1, 2, 5, 9, 4, 13, 4, 10];
 
-const numClient: number = 4;
+const numClient: number = +prompt();
 
 let count: number = 0;
 
