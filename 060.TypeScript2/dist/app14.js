@@ -1,22 +1,5 @@
 // 14. Напишите программу, которая находит и выводит наиболее часто встречающийся
 // символ в заданной строке.
-// function mostFrequent(data) {
-//   let result;
-//   let max = 0;
-//   let count;
-//   for (let i = 0; i < data.length; i++) {
-//     count = 0;
-//     for (let k = i; k < data.length; k++) {
-//       if (data[i] === data[k]) count++;
-//       if (count > max) {
-//         max = count;
-//         result = data[i];
-//       }
-//     }
-//   }
-//   return result;
-// }
-// console.log(mostFrequent(["a", "a", "bi", "bi", "bi"]));
 const str14 = "antonasdqweqwralksdjvhlkjjjjj";
 let res14 = "";
 let maxCount = 0;
