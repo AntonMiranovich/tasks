@@ -4,13 +4,11 @@
 const str: string[] = "My name is Anton".split(" ");
 
 let resStr: string = "";
-let lengthStr: number = 0;
 
 str.forEach((el: string) => {
-  if (el.length > lengthStr) {
-    lengthStr = el.length;
+  if (el.length > resStr.length) {
     resStr = el;
   }
 });
 
-console.log(`самое длинное слово в строке ${resStr} , его длинна ${lengthStr}`);
+console.log(`самое длинное слово в строке ${resStr} , его длинна ${resStr.length}`);

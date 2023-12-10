@@ -2,11 +2,9 @@
 // слова в заданной строке.
 const str = "My name is Anton".split(" ");
 let resStr = "";
-let lengthStr = 0;
 str.forEach((el) => {
-    if (el.length > lengthStr) {
-        lengthStr = el.length;
+    if (el.length > resStr.length) {
         resStr = el;
     }
 });
-console.log(`самое длинное слово в строке ${resStr} , его длинна ${lengthStr}`);
+console.log(`самое длинное слово в строке ${resStr} , его длинна ${resStr.length}`);
