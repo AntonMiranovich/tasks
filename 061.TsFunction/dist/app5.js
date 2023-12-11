@@ -1,12 +1,21 @@
-// 5. Напишите программу, которая находит сумму всех чисел от 1 до 100 и выводит
-// результат в консоль.
-const numb = 100;
-function factorial(n) {
-    if (n == 0) {
-        return 0;
-    }
-    else {
-        return n + factorial(n - 1);
-    }
+// 5. У вас есть массив объектов вида приведенного в приложении. Необходимо
+// вывести товар с максимальным прайсом
+const shop5 = [
+    { id: 1, title: "Часы", count: 10, price: 500 },
+    { id: 2, title: "Смартфон", count: 33, price: 1500 },
+    { id: 3, title: "Моноблок", count: 6, price: 2200 },
+    { id: 4, title: "Ноутбук", count: 13, price: 3000 },
+    { id: 5, title: "Планшет", count: 22, price: 2100 },
+];
+function maxPrice(shop5) {
+    let maxPriceTitle;
+    let coutnMaxPrice = 0;
+    shop5.forEach((el) => {
+        if (el.price > coutnMaxPrice) {
+            coutnMaxPrice = el.price;
+            maxPriceTitle = el;
+        }
+    });
+    return maxPriceTitle;
 }
-console.log(factorial(numb));
+console.log(maxPrice(shop5));

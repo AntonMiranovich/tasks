@@ -1,23 +1,13 @@
-// 1. Напишите программу, которая проверяет, является ли заданное число num
-// четным или нечетным.
-let num = +prompt("Введите число");
-//1
-if (!isNaN(num)) {
-    if (num % 2 == 0) {
-        console.log("четное");
-    }
-    else {
-        console.log("не четное");
-    }
+// 1. У вас есть массив объектов вида приведенного в приложении. Необходимо
+// вывести все товары, количество которых больше 10
+const shop1 = [
+    { id: 1, title: "Часы", count: 10, price: 500 },
+    { id: 2, title: "Смартфон", count: 33, price: 1500 },
+    { id: 3, title: "Моноблок", count: 6, price: 2200 },
+    { id: 4, title: "Ноутбук", count: 13, price: 3000 },
+    { id: 5, title: "Планшет", count: 22, price: 2100 },
+];
+function countTitle(shop1) {
+    return shop1.filter((el) => el.count > 10);
 }
-else {
-    console.log("вы ввели не число");
-}
-//2
-!isNaN(num)
-    ? num % 2 == 0
-        ? console.log("четное")
-        : console.log("нечетное")
-    : console.log("вы ввели нечисло");
-//3
-console.log(!isNaN(num) ? (num % 2 == 0 ? "четное" : "нечетное") : "вы ввели не число");
+console.log(countTitle(shop1));
