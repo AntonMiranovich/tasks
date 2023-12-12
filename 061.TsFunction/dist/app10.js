@@ -1,13 +1,11 @@
 // 10. Реализовать функцию f: при вызове f(2, 3) -> вернет 5, при вызове f(2)(3), тоже
 // вернет 5. Использовать каррирование
-function f(x, y) {
-    if (typeof y !== 'undefined') {
-        return x + y;
-    }
-    else {
-        return (z) => x + z;
-    }
+function f(a, b) {
+    if (a && b)
+        return a + b;
+    return (b) => {
+        return a + b;
+    };
 }
-// Примеры использования
-console.log(f(2, 3)); // Вернет 5
-console.log(f(2)(3)); // Тоже вернет 5
+console.log(f(2)(3));
+console.log(f(2, 3));
