@@ -4,19 +4,28 @@
 // Использовать Generics
 
 class StringManipulator {
-  reverseString(str: string):string {
-    return str.split("").reverse().join("");
+  reverseString<T>(str: T): string {
+    if (typeof str === "string") {
+      return str.split("").reverse().join("");
+    }
   }
 
-  isPalindrome(str: string):boolean {
-    return str == str.split("").reverse().join("") ? true : false;
+  isPalindrome<Е>(str: Е): boolean {
+    if (typeof str === "string") {
+      return str == str.split("").reverse().join("") ? true : false;
+    }
   }
 
-  countVowels(str:string) {
-    /^[aeiouy]$/gm
+  countVowels<A>(str: A): number {
+    if (typeof str === "string") {
+      return str.split("").reduce((sum: number, el: string) => {
+        if (/^[aeiouy]$/gm.test(el)) return sum++;
+      }, 0);
+    }
   }
 }
 
 const stringManipulator = new StringManipulator();
-console.log(stringManipulator.reverseString("test"));
-console.log(stringManipulator.isPalindrome("teet"));
+console.log(stringManipulator.reverseString<string>("test"));
+console.log(stringManipulator.isPalindrome<string>("teet"));
+console.log(stringManipulator.countVowels<string>("teet"));
