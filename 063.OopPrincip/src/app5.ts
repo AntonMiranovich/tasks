@@ -6,26 +6,26 @@
 // console.log)
 
 abstract class Vehicle {
-  abstract start();
-  abstract stop();
+  abstract start():void;
+  abstract stop():void;
 }
 
 class Car extends Vehicle {
-  start() {
+  start():void {
     return console.log("Car start");
   }
 
-  stop() {
+  stop():void {
     return console.log("Car stop");
   }
 }
 
 class Motorcycle extends Vehicle {
-  start() {
+  start():void {
     return console.log("Motorcycle start");
   }
 
-  stop() {
+  stop():void {
     return console.log("Motorcycle stop");
   }
 }

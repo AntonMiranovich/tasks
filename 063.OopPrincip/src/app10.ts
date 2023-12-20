@@ -5,3 +5,25 @@
 // базового класса и записать в переменную используя метод super. Далее
 // дополняем переопределенный метод отображением результата в console.
 
+interface iPwd {
+  showPwd(): string;
+}
+
+class Pwd implements iPwd {
+  showPwd(): string {
+    let pwd: string = "";
+    for (let i: number = 0; i < 8; i++) {
+      pwd += Math.round(Math.random() * 10);
+    }
+    return pwd;
+  }
+}
+
+class Validation10 extends Pwd {
+  override showPwd(): string {
+    return super.showPwd();
+  }
+}
+
+const validation10 = new Validation10();
+console.log(validation10.showPwd());

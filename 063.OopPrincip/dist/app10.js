@@ -4,3 +4,19 @@
 // Pwd и содержит функцию showPwd. Необходимо переопределить showPwd из
 // базового класса и записать в переменную используя метод super. Далее
 // дополняем переопределенный метод отображением результата в console.
+class Pwd {
+    showPwd() {
+        let pwd = "";
+        for (let i = 0; i < 8; i++) {
+            pwd += Math.round(Math.random() * 10);
+        }
+        return pwd;
+    }
+}
+class Validation10 extends Pwd {
+    showPwd() {
+        return super.showPwd();
+    }
+}
+const validation10 = new Validation10();
+console.log(validation10.showPwd());
