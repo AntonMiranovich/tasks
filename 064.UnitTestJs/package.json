@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "jest": "^29.7.0"
+  },
+  "name": "064.unittestjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
