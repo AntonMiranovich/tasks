@@ -143,57 +143,120 @@
 // проверки.
 // Написать тест для функции
 
-function isUnit(arr) {
-  const uniqArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (typeof arr[i] == "number") return false;
-    if (!uniqArr.includes(arr[i])) uniqArr.push(arr[i]);
-  }
-  if (!uniqArr.length) return false;
-  return uniqArr;
-}
+// function isUnit(arr) {
+//   const uniqArr = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (typeof arr[i] == "number") return false;
+//     if (!uniqArr.includes(arr[i])) uniqArr.push(arr[i]);
+//   }
+//   if (!uniqArr.length) return false;
+//   return uniqArr;
+// }
 
-describe("test checkArr function", () => {
-  const numberPhone = [
-    "375293217119",
-    "375293217119",
-    "421654987",
-    "123456789",
-  ];
+// describe("test checkArr function", () => {
+//   const numberPhone = [
+//     "375293217119",
+//     "375293217119",
+//     "421654987",
+//     "123456789",
+//   ];
 
-  test("test toGaveLength", () => {
-    const res = isUnit(numberPhone);
-    expect(res).toHaveLength(3);
-  });
+//   test("test toGaveLength", () => {
+//     const res = isUnit(numberPhone);
+//     expect(res).toHaveLength(3);
+//   });
 
-  test("toEqual", () => {
-    const res = isUnit(numberPhone);
-    const equal = ["375293217119", "421654987", "123456789"];
-    expect(res).toEqual(equal);
-  });
+//   test("toEqual", () => {
+//     const res = isUnit(numberPhone);
+//     const equal = ["375293217119", "421654987", "123456789"];
+//     expect(res).toEqual(equal);
+//   });
 
-  test("to be false", () => {
-    const res = isUnit([]);
-    expect(res).toBeFalsy();
-  });
+//   test("to be false", () => {
+//     const res = isUnit([]);
+//     expect(res).toBeFalsy();
+//   });
 
-  test("test to be false", () => {
-    const res = isUnit([37529321, "375293217119", "421654987", "123456789"]);
-    expect(res).toBeFalsy();
-  });
-});
+//   test("test to be false", () => {
+//     const res = isUnit([37529321, "375293217119", "421654987", "123456789"]);
+//     expect(res).toBeFalsy();
+//   });
+// });
 
 // 6. На входе статичный объект. Необходимо посчитать количество пар (ключ:
 // значение) где значение число и вывести количество. Добавить необходимые
 // проверки.
 // Написать тест для функции
 
+// function objLength(obj) {
+//   if (Object.keys(obj).length == 0) return false;
+//   if (typeof obj != "object") return false;
+//   return Object.keys(obj).length;
+// }
+
+// describe("test objLength function", () => {
+//   const obj = {
+//     id: 1,
+//     numberPhone: 231,
+//     price: 10,
+//   };
+
+//   test("to be success", () => {
+//     const res = objLength(obj);
+//     expect(res).toBe(3);
+//   });
+
+//   test("to be falsy", () => {
+//     const res = objLength({});
+//     expect(res).toBeFalsy();
+//   });
+
+//   test("to be falsy", () => {
+//     const res = objLength("anton");
+//     expect(res).toBeFalsy();
+//   });
+// });
+
 // 7. На входе статичный объект. Необходимо числовые значения удвоить на выходе.
 // Написать тест для функции
+
+// function sumObjNum(obj) {
+//   let res = 0;
+//   for (let key in obj) {
+//     if (typeof obj[key] == "number") res += obj[key];
+//   }
+//   if (typeof res != "number") return false;
+//   return res;
+// }
+
+// describe("test sumObjNum function", () => {
+//   const obj = {
+//     id: 1,
+//     name: "Anton",
+//     number: 10,
+//     price: 40,
+//   };
+
+//   test("to be succses", () => {
+//     const res = sumObjNum(obj);
+//     expect(res).toBe(51);
+//   });
+
+//   test("to be falsy", () => {
+//     const res = sumObjNum(25);
+//     expect(res).toBeFalsy();
+//   });
+// });
+
+
+
 
 // 8. На входе статичный объект. Необходимо сформировать массив из всх четных
 // значений объекта.
 // Написать тест для функции
+
+
+
 
 // 9. На входе статичный массив [1, 2, 3, 4, 5, 6] и динамическое значение n. Необходимо
 // разбить данный одномерный массив на маленькие массивы в зависимости от
