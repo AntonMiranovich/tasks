@@ -248,15 +248,9 @@
 //   });
 // });
 
-
-
-
 // 8. На входе статичный объект. Необходимо сформировать массив из всх четных
 // значений объекта.
 // Написать тест для функции
-
-
-
 
 // 9. На входе статичный массив [1, 2, 3, 4, 5, 6] и динамическое значение n. Необходимо
 // разбить данный одномерный массив на маленькие массивы в зависимости от
@@ -269,6 +263,33 @@
 // 6 -> [[1, 2, 3, 4, 5, 6]]
 // Написать тест для функции
 
+// function newArr(arr, n) {
+//   if (typeof n != "number") return false;
+//   const newArr = [];
+//   let timeArr = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     timeArr.push(arr[i]);
+//     if (timeArr.length == n) {
+//       newArr.push(timeArr);
+//       timeArr = [];
+//     }
+//     if (i == arr.length - 1) {
+//       newArr.push(timeArr);
+//     }
+//   }
+//   return newArr;
+// }
+
+// describe("test newArr function", () => {
+//   const arr = [1, 2, 3, 4, 5, 6];
+//   const n = 4;
+
+//   test("to be falsy", () => {
+//     const res = newArr(arr, "b");
+//     expect(res).toBeFalsy();
+//   });
+// });
+
 // 10. Реализуйте функцию, которая принимает в качестве параметра строку и
 // возвращает массив без каких-либо элементов с одинаковым значением рядом
 // друг с другом.
@@ -277,3 +298,32 @@
 // 'ABBCcAD’ -> ['A', 'B', 'C', 'c', 'A', 'D’]
 // '12233’ -> [1, 2, 3]
 // Написать тест для функции
+
+function newArrStr(str) {
+  if (!isNaN(str)) return false;
+  const resArr = [];
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] != resArr[resArr.length - 1]) resArr.push(str[i]);
+  }
+  return resArr;
+}
+
+describe("test newArrStr function", () => {
+  const str = "AAAABBBCCDAABBB";
+
+  test("to be falsy", () => {
+    const res = newArrStr(4);
+    expect(res).toBeFalsy();
+  });
+
+  test("toEqual", () => {
+    const res = newArrStr(str);
+    const equal = ["A", "B", "C", "D", "A", "B"];
+    expect(res).toEqual(equal);
+  });
+
+  test("test toGaveLength", () => {
+    const res = newArrStr(str);
+    expect(res).toHaveLength(6);
+  });
+});
