@@ -32,9 +32,26 @@ function calculateFactorial(n: number | string): number {
 
 // 3. Напишите функцию capitalizeString(str: string): string, которая принимает строку и
 // возвращает новую строку, в которой каждое слово начинается с заглавной буквы.
+
+function capitalizeString(str: string | number): string {
+  try {
+    if (!str) throw new Error("Empty");
+    if (typeof str != "string") throw new Error("Error type str");
+    let newStr = str.split(" ");
+    let res = "";
+    for (let i = 0; i < newStr.length; i++) {
+      res += newStr[i][0].toUpperCase() + newStr[i].slice(1) + " ";
+    }
+    return res;
+  } catch (error) {
+    return error.message;
+  }
+}
+
 // 4. Напишите функцию flattenArray(array: any[]): any[], которая принимает массив, в
 // котором могут быть вложенные массивы, и возвращает новый массив, в котором
 // все элементы являются плоским списком без вложенности.
+
 // 5. Напишите функцию chunkArray(array: any[], size: number): any[][], которая
 // принимает массив и число size, и возвращает новый массив, разделенный на
 // подмассивы указанного размера.
@@ -48,6 +65,39 @@ function calculateFactorial(n: number | string): number {
 // 8. Создайте класс StringArray, который имеет свойство array (массив строк) и методы:
 // getLongestWord(): string - возвращает самое длинное слово из массива.
 // getUniqueWords(): string[] - возвращает массив уникальных слов из массива.
+
+class StringArray {
+  array: string[] = ["Anton", "Hi", "Hi"];
+
+  getLongestWord(): string {
+    try {
+      let count: string = "";
+      for (let i = 0; i < this.array.length; i++) {
+        if (this.array.length > count.length) {
+          count = this.array[i];
+        }
+      }
+      return count;
+    } catch (error) {
+      return error.message;
+    }
+  }
+
+  getUniqueWords(): string[] {
+    try {
+      let newArr: string[] = [];
+      for (let i = 0; i < this.array.length; i++) {
+        if (!newArr.includes(this.array[i])) {
+          newArr.push(this.array[i]);
+        }
+      }
+      return newArr;
+    } catch (error) {
+      return error.message;
+    }
+  }
+}
+
 // 9. Создайте класс NumberArray, который имеет свойство array (массив чисел) и
 // методы:
 // getSum(): number - возвращает сумму всех чисел в массиве.
@@ -70,4 +120,4 @@ function calculateFactorial(n: number | string): number {
 // '12233’ -> [1, 2, 3]
 // Написать тест для функции
 
-export { isPalindrome, calculateFactorial };
+export { isPalindrome, calculateFactorial, capitalizeString, StringArray };
