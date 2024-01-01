@@ -52,16 +52,78 @@ function capitalizeString(str: string | number): string {
 // котором могут быть вложенные массивы, и возвращает новый массив, в котором
 // все элементы являются плоским списком без вложенности.
 
+// function flattenArray(array: any[]): any[] {
+//   try {
+//     const newArr: any[] = [];
+//     for (let i = 0; i < array.length; i++) {
+//       if ((typeof array[i] == "number") || (typeof array[i] == "string")) {
+//         newArr.push(array[i]);
+//       } else {
+//         newArr.push(...array[i]);
+//       }
+//     }
+//     return newArr;
+//   } catch (error) {
+//     return error.message;
+//   }
+// }
+
+function flattenArray(array: any[]): any[] {
+  try {
+    if (!array.length) throw new Error("Empty");
+    return array.flat(Infinity);
+  } catch (error) {
+    return error.message;
+  }
+}
+
 // 5. Напишите функцию chunkArray(array: any[], size: number): any[][], которая
 // принимает массив и число size, и возвращает новый массив, разделенный на
 // подмассивы указанного размера.
+
+function chunkArray(array: any[], size: number): any[][] {
+  try {
+    if (!array.length) throw new Error("Empty");
+    const result: any[][] = [];
+    let temporaryArray: any[] = [];
+    for (let i = 0; i < array.length; i++) {
+      temporaryArray.push(array[i]);
+      if (temporaryArray.length == size) {
+        result.push(temporaryArray);
+        temporaryArray = [];
+      }
+    }
+    if (temporaryArray.length != 0) result.push(temporaryArray);
+    return result;
+  } catch (error) {
+    return error.message;
+  }
+}
+
 // 6. Напишите функцию findMissingNumber(numbers: number[]): number, которая
 // принимает массив чисел, в котором пропущено одно число из
 // последовательности, и возвращает пропущенное число.
+
+function findMissingNumber(numbers: number[]): string {
+  try {
+    if (!numbers.length) throw new Error("Empty");
+    let res: string = "";
+    for (let i = 1; i < numbers.length; i++) {
+      if (numbers[i] !== numbers[i - 1] + 1) {
+        res += `${numbers[i - 1] + 1}; `;
+      }
+    }
+    return res;
+  } catch (error) {
+    return error.message;
+  }
+}
+
 // 7. Напишите функцию findPairWithSum(numbers: number[], targetSum: number):
 // [number, number] | null, которая принимает массив чисел и целевую сумму, и
 // возвращает пару чисел из массива, сумма которых равна целевой сумме. Если
 // такая пара не найдена, функция должна возвращать null.
+
 // 8. Создайте класс StringArray, который имеет свойство array (массив строк) и методы:
 // getLongestWord(): string - возвращает самое длинное слово из массива.
 // getUniqueWords(): string[] - возвращает массив уникальных слов из массива.
@@ -102,15 +164,101 @@ class StringArray {
 // методы:
 // getSum(): number - возвращает сумму всех чисел в массиве.
 // getEvenNumbers(): number[] - возвращает массив только четных чисел из массива.
+
+class NumberArray {
+  array: number[] = [];
+
+  getSum(): number {
+    try {
+      if (!this.array.length) throw new Error("Empty");
+      return this.array.reduce((sum: number, el: number) => sum + el, 0);
+    } catch (error) {
+      return error.message;
+    }
+  }
+
+  getEvenNumbers(): number[] {
+    try {
+      if (!this.array.length) throw new Error("Empty");
+      return this.array.filter((el: number) => el % 2 == 0);
+    } catch (error) {
+      return error.message;
+    }
+  }
+}
+
 // 10. Создайте класс PersonArray, который имеет свойство array (массив объектов
 // Person) и методы:
 // getNames(): string[] - возвращает массив имен всех людей.
 // getAdults(): Person[] - возвращает массив только совершеннолетних людей.
 // getAverageAge(): number - возвращает средний возраст всех людей.
+
+interface iPerson {
+  name: string;
+  age: number;
+}
+
+class PersonArray {
+  array: iPerson[] = [
+    {
+      name: "Anton",
+      age: 31,
+    },
+    {
+      name: "Vasia",
+      age: 23,
+    },
+    {
+      name: "Alesha",
+      age: 12,
+    },
+  ];
+
+  getNames(): string[] {
+    const res: string[] = [];
+    for (let i = 0; i < this.array.length; i++) {
+      res.push(this.array[i].name);
+    }
+    return res;
+  }
+
+  getAdults(): iPerson[] {
+    const res: iPerson[] = [];
+    for (let i = 0; i < this.array.length; i++) {
+      if (this.array[i].age > 17) res.push(this.array[i]);
+    }
+    return res;
+  }
+
+  getAverageAge(): number {
+    return this.array.reduce(
+      (sum: number, el: iPerson) => sum + el.age / this.array.length,
+      0
+    );
+  }
+}
+
 // 11. Создайте класс StringManipulator, который имеет свойство text (строка) и методы:
 // getCharacterCount(): number - возвращает количество символов в тексте.
 // getWords(): string[] - возвращает массив слов из текста.
 // getReversedText(): string - возвращает текст в обратном порядке.
+
+class StringManipulator {
+  text: string = "Hello World All";
+
+  getCharacterCount(): number {
+    return this.text.length;
+  }
+
+  getWords(): string[] {
+    return this.text.split(" ");
+  }
+
+  getReversedText(): string {
+    return this.text.split("").reverse().join("");
+  }
+}
+
 // 10. Реализуйте функцию, которая принимает в качестве параметра строку и
 // возвращает массив без каких-либо элементов с одинаковым значением рядом
 // друг с другом.
@@ -120,4 +268,15 @@ class StringArray {
 // '12233’ -> [1, 2, 3]
 // Написать тест для функции
 
-export { isPalindrome, calculateFactorial, capitalizeString, StringArray };
+export {
+  isPalindrome,
+  calculateFactorial,
+  capitalizeString,
+  StringArray,
+  flattenArray,
+  chunkArray,
+  findMissingNumber,
+  NumberArray,
+  PersonArray,
+  StringManipulator,
+};
