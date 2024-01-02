@@ -9,6 +9,7 @@ import {
   NumberArray,
   PersonArray,
   StringManipulator,
+  findPairWithSum,
 } from "./app";
 
 //1
@@ -106,6 +107,19 @@ describe("test chunkArray", () => {
   test("return empty", () => {
     const res = chunkArray([], 3);
     expect(res).toBe("Empty");
+  });
+});
+
+//7
+describe("test findPairWithSum", () => {
+  test("test tobe findPairWithSum", () => {
+    const res = findPairWithSum([1, 2, 3, 4, 5], 5);
+    expect(res).toEqual([4, 1]);
+  });
+
+  test("return empty", () => {
+    const res = findPairWithSum([], 5);
+    expect(res).toBe("empty numbers");
   });
 });
 

@@ -124,6 +124,29 @@ function findMissingNumber(numbers: number[]): string {
 // возвращает пару чисел из массива, сумма которых равна целевой сумме. Если
 // такая пара не найдена, функция должна возвращать null.
 
+function findPairWithSum(
+  numbers: number[],
+  targetSum: number
+): [number, number] | null {
+  try {
+    if(!numbers.length)throw new Error('empty numbers')
+
+    let result: [number, number] | null = null;
+
+    for (let i = 0; i < numbers.length; i++) {
+      for (let j = 0; j < numbers.length; j++) {
+        if (numbers[i] + numbers[j] == targetSum) {
+          result = [numbers[i], numbers[j]];
+        }
+      }
+    }
+
+    return result;
+  } catch (error) {
+    return error.message;
+  }
+}
+
 // 8. Создайте класс StringArray, который имеет свойство array (массив строк) и методы:
 // getLongestWord(): string - возвращает самое длинное слово из массива.
 // getUniqueWords(): string[] - возвращает массив уникальных слов из массива.
@@ -259,15 +282,6 @@ class StringManipulator {
   }
 }
 
-// 10. Реализуйте функцию, которая принимает в качестве параметра строку и
-// возвращает массив без каких-либо элементов с одинаковым значением рядом
-// друг с другом.
-// Написать тест для функции
-// 'AAAABBBCCDAABBB -> ['A', 'B', 'C', 'D', 'A', 'B’]
-// 'ABBCcAD’ -> ['A', 'B', 'C', 'c', 'A', 'D’]
-// '12233’ -> [1, 2, 3]
-// Написать тест для функции
-
 export {
   isPalindrome,
   calculateFactorial,
@@ -279,4 +293,5 @@ export {
   NumberArray,
   PersonArray,
   StringManipulator,
+  findPairWithSum,
 };
