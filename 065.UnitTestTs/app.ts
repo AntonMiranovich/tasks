@@ -52,31 +52,31 @@ function capitalizeString(str: string | number): string {
 // котором могут быть вложенные массивы, и возвращает новый массив, в котором
 // все элементы являются плоским списком без вложенности.
 
-function flattenArray(array: any[]): any[] {
-  try {
-    const newArr: any[] = [];
-    for (let i = 0; i < array.length; i++) {
-      if ((typeof array[i] == "number") || (typeof array[i] == "string")) {
-        newArr.push(array[i]);
-      } else {
-        newArr.push(...array[i]);
-      }
-    }
-    return newArr;
-  } catch (error) {
-    return error.message;
-  }
-}
-
-
 // function flattenArray(array: any[]): any[] {
 //   try {
-//     if (!array.length) throw new Error("Empty");
-//     return array.flat(Infinity);
+//    if (!array.length) throw new Error("Empty");
+//     const newArr: any[] = [];
+//     for (let i = 0; i < array.length; i++) {
+//       if ((typeof array[i] == "number") || (typeof array[i] == "string")) {
+//         newArr.push(array[i]);
+//       } else {
+//         newArr.push(...array[i]);
+//       }
+//     }
+//     return newArr;
 //   } catch (error) {
 //     return error.message;
 //   }
 // }
+
+function flattenArray(array: any[]): any[] {
+  try {
+    if (!array.length) throw new Error("Empty");
+    return array.flat(Infinity);
+  } catch (error) {
+    return error.message;
+  }
+}
 
 // 5. Напишите функцию chunkArray(array: any[], size: number): any[][], которая
 // принимает массив и число size, и возвращает новый массив, разделенный на
@@ -130,7 +130,7 @@ function findPairWithSum(
   targetSum: number
 ): [number, number] | null {
   try {
-    if(!numbers.length)throw new Error('empty numbers')
+    if (!numbers.length) throw new Error("empty numbers");
 
     let result: [number, number] | null = null;
 
