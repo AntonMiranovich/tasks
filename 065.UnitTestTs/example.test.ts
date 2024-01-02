@@ -66,7 +66,7 @@ describe("test capitalizeString", () => {
   });
 });
 
-//4
+//8
 describe("test StringArray", () => {
   test("test get getLongestWord", () => {
     const stringArray = new StringArray();
@@ -81,7 +81,7 @@ describe("test StringArray", () => {
   });
 });
 
-//5
+//4
 describe("test flattenArray", () => {
   test("test get flattenArray", () => {
     const res = flattenArray([1, 2, "a", [1, "a"]]);
@@ -94,7 +94,7 @@ describe("test flattenArray", () => {
   });
 });
 
-//6
+//5
 describe("test chunkArray", () => {
   test("test get chunkArray", () => {
     const res = chunkArray([1, 2, "a", 1, "a", 4], 4);
@@ -123,7 +123,7 @@ describe("test findPairWithSum", () => {
   });
 });
 
-//8
+//6
 describe("test findMissingNumber", () => {
   test("test get findMissingNumber", () => {
     const res = findMissingNumber([1, 2, 4, 5, 7]);
